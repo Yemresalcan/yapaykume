@@ -1,7 +1,8 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import FeatureCard from "@/components/FeatureCard";
+import Modal from "@/components/ui/Modal";
 
 const features = [
   {
@@ -28,13 +29,14 @@ const features = [
     link: "https://openaisumarize.vercel.app/",
     glowColor: "from-orange-400/40 to-amber-400/40"
   },
-  // {
-  //   title: "Modern Teknoloji Stack",
-  //   subtitle:
-  //     "React, TypeScript, AI/ML modelleri ve cloud altyapı ile geliştirilmiş güncel teknoloji çözümleri.",
-  //   img: "/images/features/feature4.png",
-  //   glowColor: "from-green-400/40 to-emerald-400/40"
-  // },
+   {
+     title: "Lawyer AI",
+     subtitle:
+       "Yasal işlemlerinizi hızlıca anlayın ve bilinçli kararlar alın.",
+     img: "/images/features/feature4.png",
+     glowColor: "from-green-400/40 to-emerald-400/40",
+     isComingSoon: true
+   },
   // {
   //   title: "Sürekli Geliştirme",
   //   subtitle:
@@ -47,6 +49,7 @@ const features = [
 const Features = () => {
   const containerRef = useRef(null);
   const contentRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useGSAP(
     () => {
@@ -83,6 +86,14 @@ const Features = () => {
     { scope: containerRef },
   );
 
+  const handleFeatureClick = (feature: typeof features[0]) => {
+    if (feature.isComingSoon) {
+      setIsModalOpen(true);
+    } else if (feature.link) {
+      window.open(feature.link, '_blank');
+    }
+  };
+
   return (
     <section
       className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-24"
@@ -115,23 +126,64 @@ const Features = () => {
               
               {/* Card */}
               <div className="relative">
-                {feature.link ? (
-                  <a 
-                    href={feature.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <FeatureCard {...feature} className="hover:scale-105 transition-transform duration-300" />
-                  </a>
-                ) : (
-                  <FeatureCard {...feature} className="" />
-                )}
+                <div 
+                  onClick={() => handleFeatureClick(feature)}
+                  className="block cursor-pointer"
+                >
+                  <FeatureCard {...feature} className="hover:scale-105 transition-transform duration-300" />
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Yakında Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="text-center space-y-6">
+          <div className="flex justify-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+              <svg 
+                className="w-8 h-8 text-white" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" 
+                />
+              </svg>
+            </div>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-white">
+              Lawyer AI
+            </h3>
+            <div className="space-y-2">
+              <p className="text-lg text-gray-300">
+                🚀 <strong>Yakında</strong>
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Yasal belgelerinizi analiz eden, hukuki süreçlerinizi basitleştiren 
+                ve yasal danışmanlık sunan AI destekli platform geliştiriliyor.
+              </p>
+            </div>
+          </div>
+
+          <div className="pt-4">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-medium rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              Anladım
+            </button>
+          </div>
+        </div>
+      </Modal>
     </section>
   );
 };

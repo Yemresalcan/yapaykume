@@ -50,44 +50,44 @@ const Footer = () => {
     );
   }, []);
 
-  const projectLinks = [
-    {
-      name: "🩺 MediTahlil",
-      url: "https://medikalai.fly.dev/",
-      color: "#ef4444"
-    },
-    {
-      name: "📹 YouTube AI",
-      url: "https://youtubeanalysewebai.fly.dev/",
-      color: "#8b5fbf"
-    },
-    {
-      name: "📝 Summarize AI",
-      url: "https://openaisumarize.vercel.app/",
-      color: "#f59e0b"
-    }
-  ];
+  // const projectLinks = [
+  //   {
+  //     name: "🩺 MediTahlil",
+  //     url: "https://medikalai.fly.dev/",
+  //     color: "#ef4444"
+  //   },
+  //   {
+  //     name: "📹 YouTube AI",
+  //     url: "https://youtubeanalysewebai.fly.dev/",
+  //     color: "#8b5fbf"
+  //   },
+  //   {
+  //     name: "📝 Summarize AI",
+  //     url: "https://openaisumarize.vercel.app/",
+  //     color: "#f59e0b"
+  //   }
+  // ];
 
-  const socialLinks = [
-    {
-      name: "Portfolio",
-      url: "https://www.yunusemresalcan.com",
-      icon: "🌐",
-      color: "#6366f1"
-    },
-    {
-      name: "LinkedIn",
-      url: "#",
-      icon: "💼",
-      color: "#0077b5"
-    },
-    {
-      name: "GitHub",
-      url: "#",
-      icon: "⚡",
-      color: "#333"
-    }
-  ];
+  // const socialLinks = [
+  //   {
+  //     name: "Portfolio",
+  //     url: "https://www.yunusemresalcan.com",
+  //     icon: "🌐",
+  //     color: "#6366f1"
+  //   },
+  //   {
+  //     name: "LinkedIn",
+  //     url: "#",
+  //     icon: "💼",
+  //     color: "#0077b5"
+  //   },
+  //   {
+  //     name: "GitHub",
+  //     url: "#",
+  //     icon: "⚡",
+  //     color: "#333"
+  //   }
+  // ];
 
   return (
     <footer 
@@ -126,7 +126,7 @@ const Footer = () => {
           </div>
 
           {/* Projects Section */}
-          <div ref={linksRef} className="text-center md:text-left">
+          {/* <div ref={linksRef} className="text-center md:text-left">
             <h3 className="text-white font-semibold text-lg mb-6">🚀 Projelerim</h3>
             <div className="space-y-4">
               {projectLinks.map((project, index) => (
@@ -154,10 +154,10 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Social & Contact Section */}
-          <div ref={socialRef} className="text-center md:text-left">
+          {/* <div ref={socialRef} className="text-center md:text-left">
             <h3 className="text-white font-semibold text-lg mb-6">📧 İletişim</h3>
             <div className="space-y-4 mb-8">
               {socialLinks.map((social, index) => (
@@ -201,7 +201,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom section */}
