@@ -1,0 +1,94 @@
+<!-- Bu dosya aslında JPG olmalı, SVG placeholder olarak kullanıyorum -->
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1F2937;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B5FBF;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#6366F1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E5E7EB;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  
+  <!-- Decorative elements -->
+  <circle cx="1000" cy="100" r="150" fill="rgba(139, 95, 191, 0.1)" />
+  <circle cx="200" cy="500" r="120" fill="rgba(99, 102, 241, 0.1)" />
+  <circle cx="900" cy="450" r="80" fill="rgba(255, 255, 255, 0.05)" />
+  
+  <!-- Neural network background pattern -->
+  <g opacity="0.1" stroke="white" stroke-width="1" fill="white">
+    <!-- Nodes -->
+    <circle cx="150" cy="150" r="3" />
+    <circle cx="300" cy="120" r="3" />
+    <circle cx="200" cy="250" r="3" />
+    <circle cx="350" cy="200" r="3" />
+    <circle cx="1050" cy="480" r="3" />
+    <circle cx="950" cy="380" r="3" />
+    <circle cx="1100" cy="420" r="3" />
+    <!-- Connections -->
+    <line x1="150" y1="150" x2="300" y2="120" />
+    <line x1="300" y1="120" x2="350" y2="200" />
+    <line x1="200" y1="250" x2="350" y2="200" />
+    <line x1="1050" y1="480" x2="950" y2="380" />
+    <line x1="950" y1="380" x2="1100" y2="420" />
+  </g>
+  
+  <!-- Main content -->
+  <g transform="translate(100, 200)">
+    <!-- Title -->
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="url(#textGrad)" filter="url(#glow)">
+      Yapay Küme
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="36" fill="#E5E7EB">
+      AI Projelerim
+    </text>
+    
+    <!-- Description -->
+    <text x="0" y="140" font-family="Arial, sans-serif" font-size="24" fill="#9CA3AF">
+      Medical AI • YouTube Analiz • Metin Özetleme • Lawyer AI
+    </text>
+    
+    <!-- Call to action -->
+    <text x="0" y="200" font-family="Arial, sans-serif" font-size="20" fill="#8B5FBF">
+      yapaykume.com
+    </text>
+  </g>
+  
+  <!-- AI Icon in the corner -->
+  <g transform="translate(1000, 100)" fill="rgba(255, 255, 255, 0.3)">
+    <!-- Central hub -->
+    <circle cx="0" cy="0" r="8" />
+    
+    <!-- Neural nodes -->
+    <circle cx="-35" cy="-35" r="6" />
+    <circle cx="35" cy="-35" r="6" />
+    <circle cx="-35" cy="35" r="6" />
+    <circle cx="35" cy="35" r="6" />
+    
+    <!-- Connections -->
+    <g stroke="rgba(255, 255, 255, 0.3)" stroke-width="3" fill="none">
+      <line x1="0" y1="0" x2="-35" y2="-35" />
+      <line x1="0" y1="0" x2="35" y2="-35" />
+      <line x1="0" y1="0" x2="-35" y2="35" />
+      <line x1="0" y1="0" x2="35" y2="35" />
+    </g>
+  </g>
+  
+  <!-- Bottom gradient overlay -->
+  <rect width="1200" height="100" y="530" fill="url(#bgGrad)" opacity="0.8" />
+  
+</svg> 

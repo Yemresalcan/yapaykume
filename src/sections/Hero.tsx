@@ -84,7 +84,7 @@ const Hero = () => {
     <section className="mx-auto flex max-w-7xl flex-col items-center justify-center px-4 pt-15 sm:px-6 sm:pt-20 md:px-8 md:pt-25 min-h-screen">
       <div className="relative z-10 flex flex-col items-center justify-center gap-12">
         <div className="flex flex-col items-center gap-12">
-          <div className="z-10 flex max-w-4xl flex-col items-center gap-8 text-center">
+          <header className="z-10 flex max-w-4xl flex-col items-center gap-8 text-center">
             <h1
               className="flex-1 text-4xl leading-tight font-bold sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
               ref={titleRef}
@@ -99,18 +99,19 @@ const Hero = () => {
               Sağlıktan içerik analizine, özetlemeden veri işlemeye kadar 
               hayatınızı kolaylaştıran AI çözümleri burada.
             </p>
-          </div>
+          </header>
 
-          <div className="z-10 space-y-8">
+          <nav className="z-10 space-y-8" role="navigation" aria-label="Ana navigasyon">
             <div ref={buttonRef}>
               {/* <Button onClick={() => document.getElementById('')?.scrollIntoView({ behavior: 'smooth' })}>
                   imizi Keşfedin
               </Button> */}
             </div>
             <a
-              href=""
+              href="#features"
               className="text-regular flex flex-col items-center justify-center gap-[5px] text-sm hover:text-white transition-colors"
               ref={learnMoreRef}
+              aria-label="AI projelerini keşfetmek için aşağı kaydır"
             >
               AI Projelerini İncele
               <svg
@@ -123,19 +124,22 @@ const Hero = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <path d="M12 5v14" />
                 <path d="m19 12-7 7-7-7" />
               </svg>
             </a>
-          </div>
+          </nav>
         </div>
 
         <img
           src="/images/stars.png"
-          alt="Stars"
+          alt="Yapay zeka ve teknoloji temalı dekoratif yıldızlar - Yapay Küme'nin görsel kimliği"
           className="absolute top-1/4 z-0 object-contain opacity-50"
           ref={starsRef}
+          loading="eager"
+          decoding="async"
         />
       </div>
     </section>

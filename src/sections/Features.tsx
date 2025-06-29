@@ -101,7 +101,7 @@ const Features = () => {
       id="features"
     >
       <div className="space-y-16">
-        <div
+        <header
           className="mx-auto flex w-full flex-col items-center gap-5 text-center md:mx-0 md:max-w-2/3 md:items-start md:text-start lg:max-w-1/2"
           ref={contentRef}
         >
@@ -113,7 +113,7 @@ const Features = () => {
             <span className="text-white"> gerçek ihtiyaçlara</span> yönelik 
             geliştirilen yenilikçi teknolojiler içeriyor.
           </p>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
@@ -130,7 +130,12 @@ const Features = () => {
                   onClick={() => handleFeatureClick(feature)}
                   className="block cursor-pointer"
                 >
-                  <FeatureCard {...feature} className="hover:scale-105 transition-transform duration-300" />
+                  <FeatureCard 
+                    {...feature} 
+                    className="hover:scale-105 transition-transform duration-300"
+                    link={feature.link}
+                    isComingSoon={feature.isComingSoon}
+                  />
                 </div>
               </div>
             </div>
