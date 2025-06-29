@@ -2,6 +2,7 @@ import Button from "@/components/ui/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import { trackCTAClick, trackExternalLink } from "@/lib/analytics";
 
 const CTABlock = () => {
   const containerRef = useRef(null);
@@ -82,7 +83,11 @@ const CTABlock = () => {
         </p>
       </div>
       <div ref={buttonRef}>
-        <Button onClick={() => window.open('https://yunusemresalcan.com', '_blank')}>
+        <Button onClick={() => {
+          trackCTAClick('contact', 'footer_section');
+          trackExternalLink('https://yunusemresalcan.com', 'İletişime Geç');
+          window.open('https://yunusemresalcan.com', '_blank');
+        }}>
           İletişime Geç
         </Button>
       </div>

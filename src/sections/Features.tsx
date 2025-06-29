@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import FeatureCard from "@/components/FeatureCard";
 import Modal from "@/components/ui/Modal";
+import { trackProjectClick, trackComingSoonModal } from "@/lib/analytics";
 
 const features = [
   {
@@ -88,8 +89,10 @@ const Features = () => {
 
   const handleFeatureClick = (feature: typeof features[0]) => {
     if (feature.isComingSoon) {
+      trackComingSoonModal(feature.title);
       setIsModalOpen(true);
     } else if (feature.link) {
+      trackProjectClick(feature.title, feature.link);
       window.open(feature.link, '_blank');
     }
   };

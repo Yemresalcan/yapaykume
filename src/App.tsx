@@ -12,7 +12,8 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SplitText } from "gsap/SplitText";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { trackScrollDepth, trackTimeOnPage } from "@/lib/analytics";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
@@ -28,6 +29,43 @@ const App = () => {
       normalizeScroll: true,
     });
   });
+
+  // Analytics tracking for user engagement
+  useEffect(() => {
+    const startTime = Date.now();
+    let scrollDepthTracked: Record<number, boolean> = {};
+
+    // Scroll depth tracking
+    const handleScroll = () => {
+      const scrollPercent = Math.round(
+        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+      );
+      
+      // Track at 25%, 50%, 75%, 90% scroll depths
+      [25, 50, 75, 90].forEach(depth => {
+        if (scrollPercent >= depth && !scrollDepthTracked[depth]) {
+          trackScrollDepth(depth);
+          scrollDepthTracked[depth] = true;
+        }
+      });
+    };
+
+    // Time on page tracking
+    const handleBeforeUnload = () => {
+      const timeSpent = Math.round((Date.now() - startTime) / 1000);
+      if (timeSpent > 10) { // Only track if user spent more than 10 seconds
+        trackTimeOnPage(timeSpent);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   return (
     <>
