@@ -12,28 +12,32 @@ const Hero = () => {
 
   useGSAP(() => {
     const tl = gsap.timeline();
+    const mm = gsap.matchMedia();
 
-    const titleSplit = new SplitText(titleRef.current, {
-      type: "words",
-      wordsClass: "split-word",
+    // Sadece masaüstü cihazlarda metin animasyonunu uygula
+    mm.add("(min-width: 768px)", () => {
+      const titleSplit = new SplitText(titleRef.current, {
+        type: "words",
+        wordsClass: "split-word",
+      });
+
+      gsap.set(titleSplit.words, {
+        y: 100,
+        opacity: 0,
+      });
+
+      tl.to(
+        titleSplit.words,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          stagger: 0.1,
+        },
+        0,
+      );
     });
-
-    gsap.set(titleSplit.words, {
-      y: 100,
-      opacity: 0,
-    });
-
-    tl.to(
-      titleSplit.words,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        stagger: 0.1,
-      },
-      0,
-    );
 
     tl.from(
       subtitleRef.current,
@@ -139,6 +143,7 @@ const Hero = () => {
           className="absolute top-1/4 z-0 object-contain opacity-50"
           ref={starsRef}
           loading="eager"
+          fetchpriority="high"
           decoding="async"
         />
       </div>
