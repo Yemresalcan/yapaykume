@@ -20,24 +20,36 @@ const FeatureCard = ({ className, title, subtitle, img, link, isComingSoon }: Fe
     return altTexts[title] || `${title} - AI projesi görseli`;
   };
 
+  // WebP formatı için resim yolunu oluştur
+  const baseImgPath = img.substring(0, img.lastIndexOf('.'));
+  const webpPath = `${baseImgPath}.webp`;
+
   return (
     <article
       className={cn(
         className,
-        "bg-card border-outline hover:border-accent mx-5 flex flex-col justify-between rounded-2xl border transition-all duration-300 hover:scale-105 sm:mx-10 md:mx-0",
+        "bg-card border-outline hover:border-accent mx-5 flex flex-col justify-between rounded-2xl border transition-all duration-300 hover:scale-105 sm:mx-10 md:mx-0 overflow-hidden",
       )}
       itemScope
       itemType="https://schema.org/SoftwareApplication"
     >
       <div className="relative">
-        <img 
-          src={img} 
-          alt={getAltText(title)} 
-          className="h-full w-full object-contain"
-          loading="lazy"
-          decoding="async"
-          itemProp="image"
-        />
+        <picture>
+          {/* Modern tarayıcılar için WebP formatı */}
+          <source srcSet={webpPath} type="image/webp" />
+          {/* Fallback için orijinal format */}
+          <source srcSet={img} type="image/png" /> 
+          <img 
+            src={img} 
+            alt={getAltText(title)} 
+            className="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+            itemProp="image"
+            width="400"
+            height="300"
+          />
+        </picture>
         {isComingSoon && (
           <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
             Yakında

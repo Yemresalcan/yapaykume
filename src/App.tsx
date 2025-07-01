@@ -21,12 +21,18 @@ const App = () => {
   const mainRef = useRef(null);
 
   useGSAP(() => {
-    ScrollSmoother.create({
-      content: mainRef.current,
-      smooth: 1.5,
-      effects: true,
-      smoothTouch: 0.1,
-      normalizeScroll: true,
+    // Mobil cihazlarda ScrollSmoother'ı devre dışı bırak
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      // Sadece 768px'den geniş ekranlarda çalışır
+      ScrollSmoother.create({
+        content: mainRef.current,
+        smooth: 1.5,
+        effects: true,
+        smoothTouch: 0.1,
+        normalizeScroll: true,
+      });
     });
   });
 

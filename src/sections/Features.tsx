@@ -132,7 +132,7 @@ const Features = () => {
                 <div 
                   onClick={() => handleFeatureClick(feature)}
                   className="block cursor-pointer"
-                >
+                  >
                   <FeatureCard 
                     {...feature} 
                     className="hover:scale-105 transition-transform duration-300"
