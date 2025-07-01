@@ -143,7 +143,7 @@ const Hero = () => {
           className="absolute top-1/4 z-0 object-contain opacity-50"
           ref={starsRef}
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
         />
       </div>
