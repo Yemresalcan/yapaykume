@@ -11,6 +11,7 @@ import { trackScrollDepth, trackTimeOnPage } from "@/lib/analytics";
 
 // Code Splitting: Her bölümü dinamik olarak yükle
 const Hero = lazy(() => import('./sections/Hero'));
+const YapayKumeNedir = lazy(() => import('./sections/YapayKumeNedir'));
 const About = lazy(() => import('./sections/About'));
 const Features = lazy(() => import('./sections/Features'));
 const Testimonials = lazy(() => import('./sections/Testimonials'));
@@ -87,6 +88,7 @@ const App = () => {
 
         <Suspense fallback={<div className="min-h-screen w-full flex justify-center items-center">Yükleniyor...</div>}>
           <Hero />
+          <YapayKumeNedir />
           <About />
           <Features />
           <Testimonials />

@@ -5,29 +5,29 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   
-  <!-- Ana Sayfa -->
+  <!-- Ana Sayfa - Yapay Küme -->
   <url>
-    <loc>https://yapaykume.com/</loc>
+    <loc>https://yapaykume.vercel.app/</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://yapaykume.com/favicon.svg</image:loc>
+      <image:loc>https://yapaykume.vercel.app/favicon.svg</image:loc>
       <image:caption>Yapay Küme Logo</image:caption>
-      <image:title>Yapay Küme - AI Projelerim</image:title>
+      <image:title>Yapay Küme</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://yapaykume.com/images/features/feature1.png</image:loc>
+      <image:loc>https://yapaykume.vercel.app/images/features/feature1.png</image:loc>
       <image:caption>Medical AI - Kan tahlili analizi</image:caption>
       <image:title>Medical AI Projesi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://yapaykume.com/images/features/feature2.png</image:loc>
+      <image:loc>https://yapaykume.vercel.app/images/features/feature2.png</image:loc>
       <image:caption>YouTube Comment AI - Video yorumu analizi</image:caption>
       <image:title>YouTube Comment AI Projesi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://yapaykume.com/images/features/feature3.png</image:loc>
+      <image:loc>https://yapaykume.vercel.app/images/features/feature3.png</image:loc>
       <image:caption>Summarize AI - Metin özetleme</image:caption>
       <image:title>Summarize AI Projesi</image:title>
     </image:image>
@@ -35,24 +35,31 @@
   
   <!-- Sections (Fragment URLs for better indexing) -->
   <url>
-    <loc>https://yapaykume.com/#features</loc>
+    <loc>https://yapaykume.vercel.app/#features</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://yapaykume.com/#about</loc>
+    <loc>https://yapaykume.vercel.app/#about</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://yapaykume.com/#testimonials</loc>
+    <loc>https://yapaykume.vercel.app/#testimonials</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://yapaykume.vercel.app/#yapay-kume-nedir</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   
   <!-- External Project URLs (for reference) -->

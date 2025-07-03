@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://yapaykume.com/sitemap.xml
+Sitemap: https://yapaykume.vercel.app/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
@@ -26,4 +26,4 @@ Allow: /*.svg$
 Allow: /*.webp$
 
 # Host specification
-Host: https://yapaykume.com 
+Host: https://yapaykume.vercel.app 

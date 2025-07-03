@@ -93,15 +93,15 @@ const Hero = () => {
               className="flex-1 text-4xl leading-tight font-bold sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
               ref={titleRef}
             >
-              Yapay Küme'ye Hoş Geldiniz
+              Yapay Küme
             </h1>
             <p
               className="text-regular flex-1 text-lg sm:text-xl md:text-2xl max-w-3xl"
               ref={subtitleRef}
             >
-              Yapay zeka dünyasında bir araya gelmiş projelerimizi keşfedin. 
+              Yapay küme teknolojisiyle geliştirilmiş AI projelerini keşfedin. 
               Sağlıktan içerik analizine, özetlemeden veri işlemeye kadar 
-              hayatınızı kolaylaştıran AI çözümleri burada.
+              yapay küme sistemiyle hayatınızı kolaylaştıran çözümler burada.
             </p>
           </header>
 

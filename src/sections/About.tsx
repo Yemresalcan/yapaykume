@@ -24,14 +24,14 @@ const About = () => {
         ref={containerRef}
       >
         <h2 className="title flex-1 text-2xl leading-tight font-bold sm:text-3xl md:text-4xl lg:text-5xl">
-          AI ile gerçek problemlere gerçek çözümler
+          Yapay Küme ile Gerçek Problemlere Gerçek Çözümler
         </h2>
         <p className="text-regular flex-1 text-sm sm:text-xl">
-          Her proje, günlük hayatta karşılaştığımız zorluklara yapay zeka ile 
+          Her proje, günlük hayatta karşılaştığımız zorluklara yapay küme teknolojisi ile 
           çözüm bulmak amacıyla geliştirildi. Sağlık tahlillerinden sosyal medya 
-          analizine kadar, kullanıcı odaklı ve pratik AI uygulamaları yaratıyorum.{" "}
+          analizine kadar, kullanıcı odaklı ve pratik yapay küme uygulamaları yaratıyorum.{" "}
           <span className="text-white">
-            Teknoloji sadece teknoloji için değil, hayatı kolaylaştırmak için.
+            Yapay küme teknolojisi sadece teknoloji için değil, hayatı kolaylaştırmak için.
           </span>
         </p>
       </div>

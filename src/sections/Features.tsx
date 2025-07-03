@@ -109,12 +109,12 @@ const Features = () => {
           ref={contentRef}
         >
           <h2 className="title flex-1 text-2xl leading-tight font-bold sm:text-3xl md:text-4xl lg:text-5xl">
-            AI Projelerim
+            Yapay Küme AI Projelerim
           </h2>
           <p className="text-regular flex-1 text-xs sm:text-lg">
-            Hayatı kolaylaştıran yapay zeka çözümleri. Her proje, 
+            Yapay küme teknolojisiyle hayatı kolaylaştıran AI çözümleri. Her proje, 
             <span className="text-white"> gerçek ihtiyaçlara</span> yönelik 
-            geliştirilen yenilikçi teknolojiler içeriyor.
+            geliştirilen yapay küme sistemi tabanlı yenilikçi teknolojiler içeriyor.
           </p>
         </header>
 
