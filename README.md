@@ -1,4 +1,6 @@
 # Yapay Küme - AI Projeler Platformu 🚀
+<img width="1612" height="853" alt="image" src="https://github.com/user-attachments/assets/7ad3f545-65e6-43b6-936d-2cbba3f12862" />
+
 
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://yapaykume.vercel.app/)
 [![React](https://img.shields.io/badge/React-18.2.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
